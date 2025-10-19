@@ -1,0 +1,50 @@
+// Text Colors
+$mainTextColor: #000000;
+$darkTextColor: #e58311;
+$lightTextColor: #ffffff;
+$hoverLinkColor: #ad5f00;
+
+// Background Colors
+$lightBgColor: #ffffff;
+$blackBgColor: #000000;
+$darkBgColor: #e58311;
+$darkerBgColor: #ad5f00;
+
+// Border
+$borderColor: #e58211;
+$borderWidth: 1.5px;
+
+// Gradient
+$mainGrad: linear-gradient(111deg, #ff9d2d 0%, #ffd877 100%);
+
+// Fonts
+$mainFontFamily: "Kodchasan", "Open Sans", sans-serif;
+$basicFontSize: 16px;
+
+//  Borders
+$bigBorderRadius: 1.88rem; //30px
+
+//  Container
+$containerPadding: 15px;
+$containerWidth: 1146px;
+
+//  Transitions
+$basicTrans: all 0.3s;
+
+//  Scale
+$basicScale: scale(1.3);
+
+//  Opacity
+$basicOpacity: 0.8;
+
+// Paddings & Margins
+$mainPadding: 1rem;
+$mainMargin: 1rem;
+
+// Medias
+$mediaPC: 1400px;
+$mediaSmallPC: 1200px;
+$mediaTablet: 992px;
+$mediaSmallTablet: 768px;
+$mediaMobile: 576px;
+$mediaSmallMobile: 320px;

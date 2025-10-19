@@ -1,0 +1,25 @@
+@use "../utils/fonts";
+@use "../utils/vars";
+
+html {
+    font-size: vars.$basicFontSize;
+}
+
+body {
+    background-color: vars.$lightBgColor;
+    font-family: vars.$mainFontFamily;
+    color: vars.$mainTextColor;
+}
+
+.body__fixed {
+    overflow: hidden;
+}
+
+.container {
+    max-width: vars.$containerWidth;
+    margin: 0 auto;
+}
+
+.display--none {
+    display: none;
+}

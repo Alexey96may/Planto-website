@@ -1,0 +1,32 @@
+@mixin imgAdaptive($aRatio: 1, $oFit: cover) {
+    object-fit: $oFit;
+    width: 100%;
+    aspect-ratio: $aRatio;
+}
+
+@mixin position(
+    $pos: static,
+    $inset: 0,
+    $tOrB: top,
+    $lOrR: left,
+    $tOrBValue: 0,
+    $lOrRValue: 0
+) {
+    position: $pos;
+
+    @if $inset >= 0 {
+        inset: $inset;
+    } @else {
+        @if $tOrB == top {
+            top: $tOrBValue;
+        } @else {
+            bottom: $tOrBValue;
+        }
+
+        @if $lOrR == left {
+            left: $lOrRValue;
+        } @else {
+            right: $lOrRValue;
+        }
+    }
+}
