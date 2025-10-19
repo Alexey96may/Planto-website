@@ -8,7 +8,7 @@ interface FontInfo {
     fontExt: string[];
 }
 
-type NoParamCallback = (err: NodeJS.ErrnoException | null) => void;
+type NoParamCallback = (err: Error | null) => void;
 
 export function fontPlugIn(fontPath: string, cssFontPath: string) {
     const fontsFile = cssFontPath;
@@ -76,13 +76,13 @@ export function fontPlugIn(fontPath: string, cssFontPath: string) {
                 setFonts(fontsFile, fontsInfo, cb);
             } else {
                 console.log(
-                    "Файл scss/fonts.scss уже существует, для обновления удалите его!"
+                    "File scss/fonts.scss is already existed, delete it to update it!"
                 );
             }
         }
     });
 
-    function cb(err: Error) {
+    function cb(err: Error | null) {
         console.log(err);
     }
 

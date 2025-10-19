@@ -54,10 +54,6 @@ export default {
 
         PluginChecker({
             typescript: true,
-            // eslint: {
-            //     lintCommand: 'eslint "./src/**/*.{ts,tsx}"',
-            //     watchPath: "./src",
-            // },
         }),
 
         handlebars({
@@ -89,12 +85,14 @@ export default {
             "@": path.resolve(__dirname, "src", "assets"),
         },
     },
+
     build: {
         rollupOptions: {
             input: {
                 main: path.resolve(__dirname, "index.html"),
-                about: path.resolve(__dirname, "src/html/pages/About.html"),
+                about: path.resolve(__dirname, "About.html"),
             },
+
             output: {
                 manualChunks(id: string) {
                     if (id.includes("node_modules")) {
@@ -108,5 +106,4 @@ export default {
             },
         },
     },
-    base: "./",
 };
