@@ -1,20 +1,19 @@
 // Text Colors
-$mainTextColor: #000000;
-$linkTextColor: #00636d;
+$mainTextColor: rgba(255, 255, 255, 0.75);
 $lightTextColor: #ffffff;
 
 // Background Colors
 $lightBgColor: #ffffff;
-$darkBgColor: #73e5ff;
-$footerBgColor: #e4e4e4;
+$darkBgColor: rgba(255, 255, 255, 0.05);
+$mainBgColor: #1b2316;
 
 // Fonts
-$mainFontFamily: "OpenSans", "Open Sans", sans-serif;
-$basicFontSize: 16px;
+$mainFontFamily: "Inter", "Open Sans", sans-serif;
+$basicFontSize: 24px;
 
 //  Container
-$containerPadding: 16px;
-$containerWidth: calc(1400px + ($containerPadding * 2));
+$containerPadding: 45px;
+$containerWidth: calc(1620px + ($containerPadding * 2));
 
 //  Transitions
 $basicTransTime: 0.3s;
@@ -22,7 +21,7 @@ $basicTransTime: 0.3s;
 // Paddings & Margins
 $mainPadding: 1rem;
 $mainMargin: 1rem;
-$mainGap: 1rem;
+$mainGap: 33px;
 
 // Medias
 $mediaPC: 1400px;
