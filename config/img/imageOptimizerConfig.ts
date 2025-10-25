@@ -13,7 +13,6 @@ export const DEFAULT_OPTIONS = {
                 params: {
                     overrides: {
                         cleanupNumericValues: false,
-                        removeViewBox: false,
                     },
                     cleanupIDs: {
                         minify: false,
@@ -45,10 +44,10 @@ export const DEFAULT_OPTIONS = {
     },
     gif: {},
     webp: {
-        quality: 75,
+        quality: 45,
     },
     avif: {
-        quality: 75,
+        quality: 45,
     },
     cache: false,
     cacheLocation: undefined,

@@ -4,6 +4,14 @@
     aspect-ratio: $aRatio;
 }
 
+@mixin flex($jCont: flex-start, $aItems: stretch, $fDir: row, $fWrap: nowrap) {
+    display: flex;
+    justify-content: $jCont;
+    align-items: $aItems;
+    flex-direction: $fDir;
+    flex-wrap: $fWrap;
+}
+
 @mixin position(
     $pos: static,
     $inset: 0,

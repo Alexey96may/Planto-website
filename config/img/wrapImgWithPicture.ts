@@ -23,7 +23,7 @@ export async function wrapImgWithPicture() {
                 const img = $(elem);
                 const src = img.attr("src");
 
-                if (src) {
+                if (!src) {
                     throw new Error(
                         `You need to set the SRC attribute to img: ${i}`
                     );

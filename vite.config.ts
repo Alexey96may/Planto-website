@@ -8,7 +8,6 @@ import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import viteCompression from "vite-plugin-compression";
 import { optimizeImages } from "./config/img/imageOptimizer";
 import { fontPlugIn } from "./config/fonts/font-plugin";
-import cp from "vite-plugin-cp";
 import { wrapImgWithPicture } from "./config/img/wrapImgWithPicture";
 import { DEFAULT_OPTIONS } from "./config/img/imageOptimizerConfig";
 import path from "path";
@@ -26,19 +25,6 @@ export default {
                 "_fonts.scss"
             )
         ),
-
-        cp({
-            targets: [
-                {
-                    src: path.resolve(
-                        __dirname,
-                        "src/assets/img/**/*.[jpg,jpeg,png]"
-                    ),
-                    dest: path.resolve(__dirname, "dist/assets/img"),
-                    flatten: true,
-                },
-            ],
-        }),
 
         svgSpritemap({
             pattern: "src/assets/sprites/*.svg",
@@ -68,9 +54,12 @@ export default {
         {
             name: "optimize-images-and-wrap",
             closeBundle: async () => {
-                await optimizeImages();
+                await optimizeImages(
+                    path.resolve(__dirname, "dist/assets/img")
+                );
                 await wrapImgWithPicture();
             },
+            enforce: "post",
         },
     ],
 
@@ -82,7 +71,7 @@ export default {
 
     resolve: {
         alias: {
-            "@": path.resolve(__dirname, "src", "assets"),
+            "@": path.resolve(__dirname, "src/assets"),
         },
     },
 
@@ -92,9 +81,8 @@ export default {
                 main: path.resolve(__dirname, "index.html"),
                 about: path.resolve(__dirname, "About.html"),
             },
-
             output: {
-                manualChunks(id: string) {
+                manualChunks(id) {
                     if (id.includes("node_modules")) {
                         return id
                             .toString()
@@ -103,7 +91,24 @@ export default {
                             .toString();
                     }
                 },
+
+                assetFileNames: (assetInfo) => {
+                    let extType = assetInfo.name.split(".").at(1);
+                    if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+                        extType = "img";
+                        return `assets/${extType}/[name][extname]`;
+                    }
+                    if (/woff2?|otf|ttf|eot/i.test(extType)) {
+                        extType = "fonts";
+                    }
+                    return `assets/${extType}/[name]-[hash][extname]`;
+                },
+
+                chunkFileNames: "assets/js/[name]-[hash].js",
+                entryFileNames: "assets/js/[name]-[hash].js",
             },
         },
     },
+
+    base: "./",
 };

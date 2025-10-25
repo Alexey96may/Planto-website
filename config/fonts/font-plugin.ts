@@ -98,7 +98,7 @@ export function fontPlugIn(fontPath: string, cssFontPath: string) {
             el.fontExt.reverse();
 
             for (let i = 0; i < el.fontExt.length; i++) {
-                finalString += `url("../assets/fonts/${el.fontFileName}.${el.fontExt[i]}") format(${el.fontExt[i]})`;
+                finalString += `url("@/fonts/${el.fontFileName}.${el.fontExt[i]}") format(${el.fontExt[i]})`;
 
                 if (i + 1 === el.fontExt.length) {
                     finalString += ";";
