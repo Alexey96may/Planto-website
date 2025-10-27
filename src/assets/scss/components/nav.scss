@@ -1,0 +1,40 @@
+@use "../bootstrap" as b;
+
+.nav {
+    overflow: auto;
+    display: block;
+
+    @media (max-width: b.$mediaTablet) {
+        display: none;
+    }
+}
+
+.nav__list {
+    @include b.flex(space-between, center);
+    gap: clamp(b.$mainGap, 3vw, 43px);
+}
+
+.nav__link {
+    font-size: 24px;
+    color: b.$lightTextColor;
+    font-weight: 500;
+    opacity: 0.75;
+    white-space: nowrap;
+    padding: 0 b.$linkPadding;
+    transition: all b.$basicTransTime ease;
+
+    &:hover,
+    &:focus-visible {
+        opacity: 1;
+
+        @media (hover: none) {
+            opacity: 0.75;
+        }
+    }
+}
+
+.nav__item-more {
+    width: 12px;
+    height: 7px;
+    vertical-align: middle;
+}

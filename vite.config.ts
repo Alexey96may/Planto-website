@@ -1,8 +1,9 @@
 import Inspect from "vite-plugin-inspect";
-import PluginChecker from "vite-plugin-checker";
+// import PluginChecker from "vite-plugin-checker";
 import handlebars from "vite-plugin-handlebars";
 import { svgSpritemap } from "vite-plugin-svg-spritemap";
 import autoprefixer from "autoprefixer";
+// import VitePluginCssMediaSplitter from "css-media-splitter/vite-plugin";
 import cssnano from "cssnano";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import viteCompression from "vite-plugin-compression";
@@ -26,6 +27,8 @@ export default {
             )
         ),
 
+        // VitePluginCssMediaSplitter({ mediaFileMinSize: 250 }),
+
         svgSpritemap({
             pattern: "src/assets/sprites/*.svg",
         }),
@@ -38,9 +41,9 @@ export default {
 
         Inspect(),
 
-        PluginChecker({
-            typescript: true,
-        }),
+        // PluginChecker({
+        //     typescript: true,
+        // }),
 
         handlebars({
             reloadOnPartialChange: true,
@@ -74,8 +77,8 @@ export default {
             "@": path.resolve(__dirname, "src/assets"),
         },
     },
-
     build: {
+        emptyOutDir: true,
         rollupOptions: {
             input: {
                 main: path.resolve(__dirname, "index.html"),
@@ -93,12 +96,17 @@ export default {
 
                 assetFileNames: (assetInfo) => {
                     let extType = assetInfo.name.split(".").at(1);
-                    if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(extType)) {
+                    if (
+                        /png|jpe?g|svg|gif|webp|avif|tiff|bmp|ico/i.test(
+                            extType
+                        )
+                    ) {
                         extType = "img";
                         return `assets/${extType}/[name][extname]`;
                     }
                     if (/woff2?|otf|ttf|eot/i.test(extType)) {
                         extType = "fonts";
+                        return `assets/${extType}/[name][extname]`;
                     }
                     return `assets/${extType}/[name]-[hash][extname]`;
                 },

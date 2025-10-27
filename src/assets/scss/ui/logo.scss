@@ -1,0 +1,21 @@
+@use "../bootstrap" as b;
+
+.logo {
+    white-space: nowrap;
+}
+
+.logo__image {
+    width: 2rem;
+    height: 2rem;
+    aspect-ratio: 1;
+    vertical-align: middle;
+    margin-right: clamp(4px, 1vw, 14px);
+}
+
+.logo__text {
+    font-size: 1.17rem;
+    color: b.$lightTextColor;
+    vertical-align: middle;
+    font-weight: 900;
+    opacity: 0.75;
+}

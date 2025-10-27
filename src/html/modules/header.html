@@ -1,1 +1,54 @@
-<header class="header" id="header" aria-label="Header">Header</header>
+<header class="header" id="header" aria-label="Header">
+    <div class="container header__container">
+        <div class="logo" aria-label="Logo field">
+            <svg class="logo__image" aria-label="Logo image">
+                <use href="./spritemap.svg#logo"></use>
+            </svg>
+            <span class="logo__text" aria-label="Logo text">Planto.</span>
+        </div>
+
+        <nav class="nav" id="nav" aria-label="Navigation">
+            <ul class="nav__list" aria-label="Navigation list">
+                <li class="nav__item">
+                    <a class="nav__link" href="#" aria-label="To home">Home</a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#" aria-label="To plants type"
+                        >Plants Type
+                        <svg class="nav__item-more" aria-label="Arrow sprite">
+                            <use href="./spritemap.svg#arrow-more"></use>
+                        </svg>
+                    </a>
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#" aria-label="To see more"
+                        >More</a
+                    >
+                </li>
+                <li class="nav__item">
+                    <a class="nav__link" href="#" aria-label="To contacts"
+                        >Contact</a
+                    >
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header__socials" aria-label="Socials field">
+            <a href="#" aria-label="To search">
+                <svg class="header__social-img" aria-label="Search image">
+                    <use href="./spritemap.svg#search"></use>
+                </svg>
+            </a>
+
+            <a href="#" aria-label="To cart">
+                <svg class="header__social-img">
+                    <use href="./spritemap.svg#bag"></use>
+                </svg>
+            </a>
+
+            <button class="burger" id="burger" aria-label="To open menu">
+                <span class="burger__line"></span>
+            </button>
+        </div>
+    </div>
+</header>

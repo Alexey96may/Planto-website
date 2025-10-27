@@ -11,7 +11,10 @@
         <title>Planto</title>
     </head>
     <body>
-        {{> header }}
+        <div class="main-bg">{{> header }}</div>
+        <svg class="logo__image" aria-label="Logo image">
+            <use href="./dist/spritemap.svg#a"></use>
+        </svg>
         <main>Main</main>
         {{> footer }}
 

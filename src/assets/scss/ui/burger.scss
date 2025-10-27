@@ -1,0 +1,71 @@
+@use "../bootstrap" as b;
+
+.burger {
+    width: 31px;
+    height: 30px;
+    padding: 0;
+    border: none;
+    background: none;
+    position: relative;
+    opacity: 0.75;
+    transition: all b.$basicTransTime ease;
+    display: none;
+
+    @media (max-width: b.$mediaTablet) {
+        display: block;
+    }
+
+    @media (max-width: b.$mediaMobile) {
+        width: 24px;
+        height: 18px;
+    }
+
+    &:hover {
+        opacity: 1;
+
+        @media (hover: none) {
+            opacity: 0.75;
+        }
+
+        .burger__line {
+            width: 100%;
+            margin-left: 0%;
+
+            @media (hover: none) {
+                width: 0%;
+                margin-left: 100%;
+            }
+        }
+    }
+}
+
+.burger__line {
+    display: block;
+    text-align: end;
+    width: 23px;
+    margin-left: 7px;
+    height: 4px;
+    transition: all b.$basicTransTime ease;
+    background-color: b.$lightBgColor;
+    border-radius: 2px;
+
+    @media (max-width: b.$mediaMobile) {
+        width: 15px;
+        margin-left: 9px;
+        height: 2px;
+    }
+
+    &::before {
+        content: "";
+        background-color: b.$lightBgColor;
+        border-radius: 2px;
+        height: 4px;
+        transition: all b.$basicTransTime ease;
+        @include b.position(absolute, -1, top, left, 0, 0);
+        width: 100%;
+
+        @media (max-width: b.$mediaMobile) {
+            height: 2px;
+        }
+    }
+}

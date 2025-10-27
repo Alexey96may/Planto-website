@@ -3,6 +3,22 @@
 
 html {
     font-size: vars.$basicFontSize;
+
+    @media (max-width: vars.$mediaTablet) {
+        font-size: 22px;
+    }
+
+    @media (max-width: vars.$mediaSmallTablet) {
+        font-size: 20px;
+    }
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: 18px;
+    }
+
+    @media (max-width: vars.$mediaSmallMobile) {
+        font-size: 16px;
+    }
 }
 
 body {
@@ -17,9 +33,28 @@ body {
 
 .container {
     max-width: vars.$containerWidth;
+    padding: 0 vars.$containerPadding;
     margin: 0 auto;
 }
 
 .display--none {
     display: none;
+}
+
+.main-bg {
+    background: url("../../img/hero-bg.jpg") center top / cover no-repeat;
+}
+
+.webp {
+    .main-bg {
+        background: url("/dist/assets/img/hero-bg.webp") center top/ cover
+            no-repeat;
+    }
+}
+
+.avif {
+    .main-bg {
+        background: url("/dist/assets/img/hero-bg.avif") center top/ cover
+            no-repeat;
+    }
 }

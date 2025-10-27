@@ -12,7 +12,7 @@ $mainFontFamily: "Inter", "Open Sans", sans-serif;
 $basicFontSize: 24px;
 
 //  Container
-$containerPadding: 45px;
+$containerPadding: 1.5rem;
 $containerWidth: calc(1620px + ($containerPadding * 2));
 
 //  Transitions
@@ -20,8 +20,9 @@ $basicTransTime: 0.3s;
 
 // Paddings & Margins
 $mainPadding: 1rem;
+$linkPadding: 8px;
 $mainMargin: 1rem;
-$mainGap: 33px;
+$mainGap: 1.4rem;
 
 // Medias
 $mediaPC: 1400px;
