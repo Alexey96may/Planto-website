@@ -5,6 +5,10 @@
 
 .header {
     padding: 2.37rem 0;
+
+    @media (max-width: b.$mediaMobile) {
+        padding: 0.8rem 0;
+    }
 }
 
 .header__container {

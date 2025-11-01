@@ -1,0 +1,22 @@
+@use "../bootstrap" as b;
+@use "author";
+
+.comment {
+    background-color: rgba(255, 255, 255, 0.15);
+    max-width: 17rem;
+    padding: 1.7rem 1.15rem 1.85rem 1.65rem;
+    border-radius: 1.875rem;
+    background: url("../../img/hero-comment_bg.png") center / 100% 100%
+        no-repeat;
+
+    backdrop-filter: blur(5px);
+}
+
+.comment__author {
+    margin-bottom: calc(1rem * (22px / b.$basicFontSize));
+}
+
+.comment__message {
+    font-size: calc(1rem * (17px / b.$basicFontSize));
+    font-weight: 400;
+}

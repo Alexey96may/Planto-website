@@ -56,5 +56,16 @@ body {
     .main-bg {
         background: url("/dist/assets/img/hero-bg.avif") center top/ cover
             no-repeat;
+        @media (max-width: 1115px) {
+            background: linear-gradient(
+                    90deg,
+                    rgba(0, 0, 0, 0.15) 0%,
+                    rgba(0, 0, 0, 0.35) 10%,
+                    rgba(0, 0, 0, 0.5) 50%,
+                    rgba(0, 0, 0, 0.35) 70%,
+                    rgba(0, 0, 0, 0.2) 100%
+                ),
+                url("../../img/hero-bg.jpg") center top / cover no-repeat;
+        }
     }
 }

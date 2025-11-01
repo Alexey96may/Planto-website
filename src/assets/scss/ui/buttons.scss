@@ -1,0 +1,81 @@
+@use "../bootstrap" as b;
+
+.button {
+    background-color: rgba(31, 39, 28, 0.75);
+    padding: 0;
+    border: none;
+    line-height: 1.1;
+    opacity: 0.75;
+    transition: all b.$basicTransTime ease;
+    z-index: 1;
+
+    &:hover {
+        opacity: 1;
+
+        @media (hover: none) {
+            opacity: 0.75;
+        }
+    }
+
+    svg {
+        display: block;
+    }
+}
+
+.button--rect {
+    @extend .button;
+    font-size: 1.1rem;
+    color: b.$lightTextColor;
+    font-weight: 400;
+    width: 7.75em;
+    padding: 0.54em;
+    border: 2px solid b.$lightBgColor;
+    border-radius: 0.43em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+    @media (max-width: b.$mediaMobile) {
+        width: auto;
+        max-width: 6em;
+        padding: 0.6em;
+        font-size: 0.8rem;
+    }
+}
+
+.button--circ {
+    @extend .button;
+    width: 2.67em;
+    aspect-ratio: 1;
+    padding: 0.54em;
+    border: 2px solid b.$lightBgColor;
+    border-radius: 50%;
+    padding: 0.54em;
+
+    @media (max-width: b.$mediaMobile) {
+        font-size: 0.8rem;
+    }
+}
+
+.bottom-button {
+    @extend .button;
+    width: 0.25rem;
+    height: 0.25rem;
+    border-radius: 50%;
+    background-color: b.$lightBgColor;
+
+    @media (max-width: b.$mediaMobile) {
+        width: 0.2rem;
+        height: 0.2rem;
+    }
+}
+
+.bottom-button--active {
+    width: 0.9rem;
+    height: 0.25rem;
+    border-radius: 46px;
+    @media (max-width: b.$mediaMobile) {
+        width: 0.6rem;
+        height: 0.2rem;
+    }
+}

@@ -1,0 +1,106 @@
+@use "../bootstrap" as b;
+@use "../ui/buttons";
+@use "../components/slider-mini";
+@use "../components/comments";
+
+.hero {
+    @media (max-width: b.$mediaMobile) {
+        padding: 0.8rem 0 0;
+    }
+}
+
+.hero__container {
+    @include b.flex(space-between, flex-start);
+    gap: b.$mainGap;
+
+    @media (max-width: 1115px) {
+        flex-direction: column;
+    }
+}
+
+.hero__info {
+    @include b.flex(flex-start, flex-start, column);
+    gap: 10.25rem;
+    max-width: calc(1rem * (892px / b.$basicFontSize));
+    padding-top: 3.8rem;
+
+    @media (max-width: 1115px) {
+        padding-top: 0;
+        gap: 3.25rem;
+    }
+}
+
+.hero__info-main {
+    @media (max-width: 1115px) {
+        @include b.flex(flex-start, flex-start, column);
+        gap: 0.8rem;
+    }
+}
+
+.hero__title {
+    font-size: 4.9rem;
+    font-weight: 600;
+    line-height: 1.32;
+
+    @media (max-width: b.$mediaMobile) {
+        font-size: 2.4rem;
+    }
+}
+
+.hero__descr {
+    font-size: 0.96rem;
+    font-weight: 500;
+    margin-bottom: 0.85rem;
+    line-height: 1.22;
+
+    @media (max-width: b.$mediaMobile) {
+        font-size: 0.7rem;
+    }
+}
+
+.hero__buttons {
+    @include b.flex(flex-start, center);
+    gap: 1.46rem;
+}
+
+.hero__video-prevue {
+    white-space: nowrap;
+
+    button {
+        vertical-align: middle;
+        margin-right: 0.66rem;
+    }
+}
+
+.hero__video--img {
+    padding-left: 0.4em;
+    width: 1.16rem;
+    height: 1.08rem;
+    fill: b.$lightBgColor;
+
+    @media (max-width: b.$mediaMobile) {
+        padding-left: 0.2em;
+    }
+}
+
+.hero__video-descr {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 0.83rem;
+    font-weight: 400;
+    max-width: 4.83rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.hero__slider-mini {
+    flex-shrink: 0;
+    align-self: center;
+}
+
+.hero__comment {
+    @media (max-width: 1115px) {
+        display: none;
+    }
+}

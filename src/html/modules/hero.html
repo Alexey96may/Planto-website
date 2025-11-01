@@ -12,7 +12,7 @@
 
                 <div class="hero__buttons" aria-label="Hero buttons">
                     <button
-                        class="button button--rect"
+                        class="button--rect"
                         aria-label="Press to explore"
                         id="heroExploreButton"
                     >
@@ -22,11 +22,9 @@
                     <div
                         class="hero__video-prevue"
                         aria-label="Hero video field"
+                        title="Live Demonstration"
                     >
-                        <button
-                            class="button button--circ"
-                            aria-label="Play video"
-                        >
+                        <button class="button--circ" aria-label="Play video">
                             <svg
                                 class="hero__video--img"
                                 aria-label="Play icon"
@@ -38,7 +36,7 @@
                         <span
                             class="hero__video-descr"
                             aria-label="Video description"
-                            >Live Demo</span
+                            >Live Demonstration</span
                         >
                     </div>
                 </div>
@@ -48,7 +46,7 @@
                 <div class="comment__author author" aria-label="Comment author">
                     <div class="author__photo" aria-label="Author`s photo">
                         <img
-                            src="../../assets/img/users/user1.png"
+                            src="./src/assets/img/users/user1.png"
                             alt="Author image"
                         />
                     </div>
@@ -94,14 +92,17 @@
             </figure>
         </div>
 
-        <div class="slider-mini" aria-label="Slider">
+        <div class="slider-mini hero__slider-mini" aria-label="Slider">
             <div class="slider-mini__cards" aria-label="Slider cards">
                 <figure class="card slider-mini__card" aria-label="Slider card">
                     <div
                         class="card__img-wrapper"
                         aria-label="Slider card image"
                     >
-                        <img src="../../assets/img/plants/Plant1" alt="Plant" />
+                        <img
+                            src="./src/assets/img/plants/Plant7.png"
+                            alt="Plant"
+                        />
                     </div>
 
                     <span class="card__tag" aria-label="Slider card tag"
@@ -134,15 +135,15 @@
                 class="slider-mini__dir-buttons"
                 aria-label="Slider direction buttons"
             >
-                <button class="slider-mini__left" aria-label="Left">
+                <button class="button slider-mini__left" aria-label="Left">
                     <svg class="slider-mini__left-img" aria-label="Arrow icon">
-                        <use href="./spritemap.svg#star-half"></use>
+                        <use href="./spritemap.svg#arrow-right"></use>
                     </svg>
                 </button>
 
-                <button class="slider-mini__right" aria-label="Right">
+                <button class="button slider-mini__right" aria-label="Right">
                     <svg class="slider-mini__right-img" aria-label="Arrow icon">
-                        <use href="./spritemap.svg#star-half"></use>
+                        <use href="./spritemap.svg#arrow-right"></use>
                     </svg>
                 </button>
             </div>

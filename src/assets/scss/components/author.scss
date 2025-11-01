@@ -1,0 +1,42 @@
+@use "../bootstrap" as b;
+
+.author {
+    @include b.flex(flex-start, center);
+    gap: calc(28rem * (1px / b.$basicFontSize));
+}
+
+.author__photo {
+    max-width: calc(1rem * (64px / b.$basicFontSize));
+    height: calc(1rem * (64px / b.$basicFontSize));
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+        object-fit: contain;
+        width: 100%;
+        width: 100%;
+        aspect-ratio: 1;
+    }
+}
+
+.author__info {
+    @include b.flex(flex-start, flex-start, column);
+    gap: calc(1rem * (5px / b.$basicFontSize));
+}
+
+.author__name {
+    font-size: calc(1rem * (22px / b.$basicFontSize));
+    line-height: calc(27px / b.$basicFontSize);
+    color: b.$lightTextColor;
+    font-weight: 400;
+}
+
+.authors__assessment {
+    @include b.flex(flex-start, center);
+    gap: calc(1rem * (9px / b.$basicFontSize));
+}
+
+.authors__star {
+    width: 0.625rem;
+    aspect-ratio: 1;
+}

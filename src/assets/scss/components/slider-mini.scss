@@ -1,0 +1,75 @@
+@use "../bootstrap" as b;
+@use "../components/card";
+
+.slider-mini {
+    position: relative;
+    width: 21.35rem;
+    height: auto;
+
+    @media (max-width: b.$mediaMobile) {
+        width: 12rem;
+    }
+}
+
+.slider-mini__cards {
+}
+
+.slider-mini__card {
+}
+
+.slider-mini__dir-buttons {
+    @include b.position(absolute, -1, top, left, 73%, 0);
+    @include b.flex(space-between);
+    width: 100%;
+    padding: 0 1.375rem;
+
+    @media (max-width: b.$mediaMobile) {
+        @include b.position(absolute, -1, top, left, 60%, 0);
+        padding: 0.75rem;
+    }
+}
+
+.slider-mini__left,
+.slider-mini__right {
+    width: 0.83rem;
+    height: 0.83rem;
+    transition: all b.$basicTransTime ease;
+    background: none;
+    z-index: 1;
+
+    @media (max-width: b.$mediaMobile) {
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+}
+
+.slider-mini__left {
+    transform: rotateZ(180deg);
+    visibility: hidden;
+    opacity: 0;
+}
+
+.slider-mini__left-img,
+.slider-mini__right-img {
+    object-fit: contain;
+    width: 100%;
+    aspect-ratio: 1;
+    fill: b.$lightBgColor;
+    opacity: b.$opacity;
+}
+
+.slider-mini__right-img {
+    aspect-ratio: 1;
+}
+
+.slider-mini__bottom-buttons {
+    @include b.position(absolute, -1, bottom, left, 1.5rem, 50%);
+    @include b.flex(flex-start, center);
+    gap: calc(1rem * (13px / b.$basicFontSize));
+    translate: -50% 0;
+
+    @media (max-width: b.$mediaMobile) {
+        @include b.position(absolute, -1, bottom, left, 0.8rem, 50%);
+        gap: calc(1rem * (8px / b.$basicFontSize));
+    }
+}
