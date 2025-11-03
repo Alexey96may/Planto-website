@@ -5,9 +5,6 @@
     padding-top: calc(1rem * (69px / b.$basicFontSize));
 }
 
-.container {
-}
-
 .trendy__container {
     .trendy-card:nth-child(2) {
         .card__img-wrapper {
@@ -28,10 +25,23 @@
 
 .trendy__title {
     font-size: calc(1rem * (55px / b.$basicFontSize));
+    white-space: nowrap;
     color: b.$lightTextColor;
     font-weight: 600;
     text-align: center;
-    margin-bottom: calc(1rem * (109px / b.$basicFontSize));
+    border-image: url("../../img/border-title.png");
+    border-image-slice: 1 fill;
+    padding: 6px 32px;
+    width: fit-content;
+    margin: 0 auto calc(1rem * (109px / b.$basicFontSize));
+    border-color: transparent;
+    border-width: 6px;
+    border-style: solid;
+
+    @media (max-width: b.$mediaMobile) {
+        font-size: calc(1rem * (32px / b.$basicFontSize));
+        padding: 6px 18px;
+    }
 }
 
 .trendy__cards {
@@ -144,9 +154,6 @@
     }
 }
 
-.card__link {
-}
-
 .card__descr {
     position: relative;
     font-size: calc(1rem * (24px / b.$basicFontSize));
@@ -170,7 +177,4 @@
 .card__buttons {
     @include b.flex(flex-start, center);
     gap: calc(1rem * (32px / b.$basicFontSize));
-}
-
-.card__button {
 }
