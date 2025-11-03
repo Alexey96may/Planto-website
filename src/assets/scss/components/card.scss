@@ -1,4 +1,5 @@
 @use "../bootstrap" as b;
+@use "../ui/buttons";
 
 .card {
     margin-top: 21.88%;
@@ -103,5 +104,50 @@
     @media (max-width: b.$mediaMobile) {
         font-size: 0.8rem;
         margin: 0 1.2rem;
+    }
+}
+
+.card__descr {
+    position: relative;
+    font-size: calc(1rem * (24px / b.$basicFontSize));
+    font-weight: 400;
+    z-index: 1;
+    padding: 0 3rem;
+
+    @media (max-width: b.$mediaMobile) {
+        font-size: calc(1rem * (18px / b.$basicFontSize));
+        padding: 0 1.2rem;
+    }
+}
+
+.card__descr--white,
+.card__title--white {
+    color: b.$lightTextColor;
+}
+
+.card__price {
+    position: relative;
+    font-size: calc(1rem * (38px / b.$basicFontSize));
+    color: b.$lightTextColor;
+    font-weight: 600;
+    z-index: 1;
+
+    @media (max-width: b.$mediaMobile) {
+        font-size: calc(1rem * (24px / b.$basicFontSize));
+    }
+}
+
+.card__buttons {
+    @include b.flex(flex-start, center);
+    gap: calc(1rem * (32px / b.$basicFontSize));
+}
+
+.card__buying {
+    padding: 0 3rem;
+    @include b.flex(space-between, center);
+    width: 100%;
+
+    @media (max-width: b.$mediaMobile) {
+        padding: 0 1.2rem;
     }
 }

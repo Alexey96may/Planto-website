@@ -22,7 +22,7 @@ html {
 }
 
 body {
-    background-color: vars.$lightBgColor;
+    background-color: vars.$mainBgColor;
     font-family: vars.$mainFontFamily;
     color: vars.$mainTextColor;
 }
@@ -67,5 +67,26 @@ body {
                 ),
                 url("../../img/hero-bg.jpg") center top / cover no-repeat;
         }
+    }
+}
+
+.title {
+    font-size: calc(1rem * (55px / vars.$basicFontSize));
+    white-space: nowrap;
+    color: vars.$lightTextColor;
+    font-weight: 600;
+    text-align: center;
+    border-image: url("../../img/border-title.png");
+    border-image-slice: 1 fill;
+    padding: 6px 32px;
+    width: fit-content;
+    margin: 0 auto calc(1rem * (109px / vars.$basicFontSize));
+    border-color: transparent;
+    border-width: 6px;
+    border-style: solid;
+
+    @media (max-width: vars.$mediaMobile) {
+        font-size: calc(1rem * (32px / vars.$basicFontSize));
+        padding: 6px 18px;
     }
 }

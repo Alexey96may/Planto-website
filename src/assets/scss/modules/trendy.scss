@@ -1,8 +1,9 @@
 @use "../bootstrap" as b;
-@use "../ui/buttons";
+@use "../components/card";
 
 .trendy {
     padding-top: calc(1rem * (69px / b.$basicFontSize));
+    padding-bottom: calc(1rem * (99px / b.$basicFontSize));
 }
 
 .trendy__container {
@@ -151,30 +152,10 @@
 
     .card__descr {
         font-size: calc(1rem * (20px / b.$basicFontSize));
+        padding: 0;
     }
-}
 
-.card__descr {
-    position: relative;
-    font-size: calc(1rem * (24px / b.$basicFontSize));
-    font-weight: 400;
-    z-index: 1;
-}
-
-.card__descr--white,
-.card__title--white {
-    color: b.$lightTextColor;
-}
-
-.card__price {
-    position: relative;
-    font-size: calc(1rem * (38px / b.$basicFontSize));
-    color: b.$lightTextColor;
-    font-weight: 600;
-    z-index: 1;
-}
-
-.card__buttons {
-    @include b.flex(flex-start, center);
-    gap: calc(1rem * (32px / b.$basicFontSize));
+    .card__price {
+        padding: 0;
+    }
 }
