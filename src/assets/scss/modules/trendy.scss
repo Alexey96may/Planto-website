@@ -2,30 +2,66 @@
 @use "../ui/buttons";
 
 .trendy {
+    padding-top: calc(1rem * (69px / b.$basicFontSize));
 }
 
 .container {
 }
+
 .trendy__container {
+    .trendy-card:nth-child(2) {
+        .card__img-wrapper {
+            left: unset;
+            right: 0;
+        }
+
+        .card__info {
+            margin-left: 0;
+            margin-right: min(46.5vw, calc(1rem * (640px / b.$basicFontSize)));
+
+            @media (max-width: b.$mediaTablet) {
+                margin-right: 0;
+            }
+        }
+    }
 }
 
 .trendy__title {
     font-size: calc(1rem * (55px / b.$basicFontSize));
     color: b.$lightTextColor;
     font-weight: 600;
+    text-align: center;
+    margin-bottom: calc(1rem * (109px / b.$basicFontSize));
 }
 
 .trendy__cards {
-}
-.card {
+    @include b.flex(flex-start, flex-start, column);
+    gap: calc(1rem * (139px / b.$basicFontSize));
 }
 
 .trendy-card {
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     max-width: unset;
     width: 100%;
     aspect-ratio: unset;
-    max-height: calc(1rem * (526px / b.$basicFontSize));
+    max-height: unset;
+    margin-top: 0;
+    padding: min(5.2rem, 8vw) calc(1rem * (50px / b.$basicFontSize))
+        min(5.2rem, 8vw) calc(1rem * (120px / b.$basicFontSize));
+
+    @media (max-width: b.$mediaTablet) {
+        padding: calc(1rem * (40px / b.$basicFontSize));
+        gap: calc(1rem * (60px / b.$basicFontSize));
+    }
+
+    @media (max-width: b.$mediaMobile) {
+        flex-direction: column;
+        justify-content: center;
+        padding: calc(1rem * (40px / b.$basicFontSize));
+        gap: calc(1rem * (34px / b.$basicFontSize));
+    }
 
     &::before {
         content: "";
@@ -37,27 +73,75 @@
 
         @media (max-width: b.$mediaMobile) {
             border-radius: 0rem;
+            background: url("../../img/hero-bigCard_bg-mobile.png") center /
+                100% 100% no-repeat;
+        }
+    }
+
+    .card__info {
+        @include b.flex(flex-start, flex-start, column);
+        margin-left: min(46.5vw, calc(1rem * (734px / b.$basicFontSize)));
+        gap: calc(1rem * (24px / b.$basicFontSize));
+
+        @media (max-width: b.$mediaTablet) {
+            margin-left: 0;
+            flex-basis: 65%;
+        }
+
+        @media (max-width: b.$mediaMobile) {
+            flex-basis: unset;
         }
     }
 
     .card__img-wrapper {
-        flex-basis: 40%;
+        @include b.position(absolute, -1, top, left, 0, 0);
+        max-width: unset;
         left: 0;
         top: unset;
         bottom: 0;
         translate: 0 0;
         margin-top: 0;
+        width: auto;
+        height: auto;
+        margin-bottom: 0;
+        aspect-ratio: unset;
+
+        @media (max-width: 1154px) {
+            bottom: auto;
+        }
+
+        @media (max-width: b.$mediaTablet) {
+            position: static;
+            flex-basis: 35%;
+        }
+
+        @media (max-width: b.$mediaMobile) {
+            margin-top: -35%;
+            flex-basis: unset;
+            max-width: 300px;
+        }
+
+        img {
+            max-width: min(46.5vw, calc(1rem * (728px / b.$basicFontSize)));
+            object-fit: contain;
+            width: auto;
+            height: auto;
+
+            @media (max-width: b.$mediaTablet) {
+                width: 100%;
+            }
+        }
+    }
+
+    .card__title {
+        padding: 0;
+        margin: 0;
+        white-space: wrap;
     }
 
     .card__descr {
         font-size: calc(1rem * (20px / b.$basicFontSize));
     }
-}
-
-.card__info {
-    flex-basis: 60%;
-}
-.card__title {
 }
 
 .card__link {
@@ -84,12 +168,9 @@
 }
 
 .card__buttons {
+    @include b.flex(flex-start, center);
+    gap: calc(1rem * (32px / b.$basicFontSize));
 }
-.button--rect {
-}
+
 .card__button {
-}
-.button--square {
-}
-.button-image {
 }

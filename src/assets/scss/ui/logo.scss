@@ -2,6 +2,9 @@
 
 .logo {
     white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: clamp(4px, 1vw, 14px);
 }
 
 .logo__image {
@@ -9,11 +12,11 @@
     height: 2rem;
     aspect-ratio: 1;
     vertical-align: middle;
-    margin-right: clamp(4px, 1vw, 14px);
 }
 
 .logo__text {
     font-size: 1.17rem;
+    display: block;
     color: b.$lightTextColor;
     vertical-align: middle;
     font-weight: 900;
