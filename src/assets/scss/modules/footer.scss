@@ -4,6 +4,11 @@
     background-color: #222c1d;
     padding: calc(1rem * (90px / b.$basicFontSize)) 0
         calc(1rem * (88px / b.$basicFontSize));
+
+    @media (max-width: b.$mediaMobile) {
+        padding: calc(1rem * (60px / b.$basicFontSize)) 0
+            calc(1rem * (58px / b.$basicFontSize));
+    }
 }
 
 .footer__container {

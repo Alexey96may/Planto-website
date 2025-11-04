@@ -1,6 +1,22 @@
 @use "../bootstrap" as b;
 @use "../components/card";
 
+.best {
+    padding-top: calc(1rem * (219px / b.$basicFontSize));
+
+    @media (max-width: b.$mediaMobile) {
+        padding-top: calc(1rem * (140px / b.$basicFontSize));
+    }
+}
+
+.best__title {
+    margin-bottom: calc(1rem * (182px / b.$basicFontSize));
+
+    @media (max-width: b.$mediaMobile) {
+        margin-bottom: calc(1rem * (162px / b.$basicFontSize));
+    }
+}
+
 .slider__card {
     @include b.flex(flex-start, flex-start, row);
     width: 100%;

@@ -3,10 +3,17 @@
 
 .review {
     padding-top: calc(1rem * (219px / b.$basicFontSize));
+
+    @media (max-width: b.$mediaMobile) {
+        padding-top: calc(1rem * (160px / b.$basicFontSize));
+    }
 }
 
 .review__title {
     margin-bottom: calc(1rem * (182px / b.$basicFontSize));
+    @media (max-width: b.$mediaMobile) {
+        margin-bottom: calc(1rem * (122px / b.$basicFontSize));
+    }
 }
 
 .review__cards {

@@ -78,7 +78,9 @@ body {
     text-align: center;
     border-image: url("../../img/border-title.png");
     border-image-slice: 1 fill;
-    padding: 6px 32px;
+    padding: calc(1rem * (14px / vars.$basicFontSize))
+        calc(1rem * (34px / vars.$basicFontSize))
+        calc(1rem * (21px / vars.$basicFontSize));
     width: fit-content;
     margin: 0 auto calc(1rem * (109px / vars.$basicFontSize));
     border-color: transparent;

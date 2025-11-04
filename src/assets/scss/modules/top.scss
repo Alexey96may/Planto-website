@@ -3,10 +3,18 @@
 
 .top {
     padding-top: calc(1rem * (143px / b.$basicFontSize));
+
+    @media (max-width: b.$mediaMobile) {
+        padding-top: calc(1rem * (120px / b.$basicFontSize));
+    }
 }
 
 .top__title {
     margin-bottom: calc(1rem * (76px / b.$basicFontSize));
+
+    @media (max-width: b.$mediaMobile) {
+        margin-bottom: calc(1rem * (56px / b.$basicFontSize));
+    }
 }
 
 .top__cards {
