@@ -1,1 +1,177 @@
-@use "../utils/vars";
+@use "../bootstrap" as b;
+
+.footer {
+    background-color: #222c1d;
+    padding: calc(1rem * (90px / b.$basicFontSize)) 0
+        calc(1rem * (88px / b.$basicFontSize));
+}
+
+.footer__container {
+    @include b.flex(flex-start, flex-start, column);
+    gap: calc(1rem * (84px / b.$basicFontSize));
+}
+
+.footer__top {
+    @include b.flex(space-between, flex-start);
+    width: 100%;
+    flex-wrap: wrap;
+    column-gap: calc(1rem * (40px / b.$basicFontSize));
+    row-gap: calc(1rem * (80px / b.$basicFontSize));
+
+    @media (max-width: b.$mediaMobile) {
+        flex-direction: column;
+    }
+}
+
+.footer__info {
+    max-width: calc(1rem * (580px / b.$basicFontSize));
+
+    .logo {
+        gap: calc(1rem * (24px / b.$basicFontSize));
+        margin-bottom: calc(1rem * (43px / b.$basicFontSize));
+    }
+
+    .logo__text {
+        font-size: calc(1rem * (58px / b.$basicFontSize));
+        font-weight: 900;
+
+        @media (max-width: b.$mediaMobile) {
+            font-size: calc(1rem * (36px / b.$basicFontSize));
+        }
+    }
+
+    .logo__image {
+        width: calc(1rem * (94px / b.$basicFontSize));
+        height: calc(1rem * (94px / b.$basicFontSize));
+        aspect-ratio: 1;
+
+        @media (max-width: b.$mediaMobile) {
+            width: calc(1rem * (62px / b.$basicFontSize));
+            height: calc(1rem * (62px / b.$basicFontSize));
+        }
+    }
+}
+
+.footer__descr {
+    font-size: calc(1rem * (28px / b.$basicFontSize));
+    color: b.$lightTextColor;
+    font-weight: 500;
+
+    @media (max-width: b.$mediaMobile) {
+        font-size: calc(1rem * (22px / b.$basicFontSize));
+    }
+}
+
+.footer__nav-list {
+    @include b.flex(flex-start, flex-start, column);
+    gap: calc(1rem * (26px / b.$basicFontSize));
+}
+
+.footer__nav-item {
+    font-size: calc(1rem * (28px / b.$basicFontSize));
+    font-weight: 800;
+    color: b.$lightTextColor;
+
+    &:first-child {
+        margin-bottom: calc(1rem * (20px / b.$basicFontSize));
+    }
+
+    a {
+        font-size: calc(1rem * (24px / b.$basicFontSize));
+        font-weight: 500;
+        color: b.$lightTextColor;
+        white-space: nowrap;
+    }
+}
+
+.footer__subscribe {
+    @media (max-width: b.$mediaTablet) {
+        width: 100%;
+    }
+}
+
+.footer__form {
+    position: relative;
+}
+
+.footer__form-text {
+    padding: calc(1rem * (22px / b.$basicFontSize))
+        calc(1rem * (200px / b.$basicFontSize))
+        calc(1rem * (22px / b.$basicFontSize))
+        calc(1rem * (29px / b.$basicFontSize));
+    border: 2px solid white;
+    border-radius: calc(1rem * (8px / b.$basicFontSize));
+    background-color: transparent;
+    color: b.$lightTextColor;
+    height: calc(1rem * (72px / b.$basicFontSize));
+    width: clamp(360px, 25vw, calc(1rem * (562px / b.$basicFontSize)));
+
+    @media (max-width: b.$mediaTablet) {
+        width: 100%;
+    }
+
+    &::placeholder {
+        font-size: calc(1rem * (24px / b.$basicFontSize));
+        color: b.$lightTextColor;
+        font-weight: 500;
+        opacity: b.$opacity;
+    }
+}
+
+.footer__form-button {
+    @include b.position(
+        absolute,
+        -1,
+        top,
+        right,
+        calc(1rem * (4px / b.$basicFontSize)),
+        calc(1rem * (4px / b.$basicFontSize))
+    );
+    width: calc(1rem * (165px / b.$basicFontSize));
+    height: calc(1rem * (64px / b.$basicFontSize));
+    font-size: calc(1rem * (22px / b.$basicFontSize));
+    border-radius: calc(1rem * (8px / b.$basicFontSize));
+    background-color: b.$lightBgColor;
+    color: black;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.footer__subscribe-title {
+    font-size: calc(1rem * (28px / b.$basicFontSize));
+    font-weight: 800;
+    color: b.$lightTextColor;
+    margin-bottom: calc(1rem * (50px / b.$basicFontSize));
+}
+
+.footer__bottom {
+    @include b.flex(space-between, center, row, wrap);
+    width: 100%;
+    gap: b.$mainGap;
+}
+
+.footer__socials {
+    @include b.flex(space-between, center);
+    gap: clamp(0.5rem, 4vw, calc(1rem * (61px / b.$basicFontSize)));
+}
+
+.footer__social {
+    a {
+        font-size: calc(1rem * (28px / b.$basicFontSize));
+        color: b.$lightTextColor;
+        font-weight: 800;
+    }
+}
+
+.copyright {
+    font-size: calc(1rem * (24px / b.$basicFontSize));
+    font-weight: 500;
+    color: b.$lightTextColor;
+    width: clamp(360px, 25vw, calc(1rem * (562px / b.$basicFontSize)));
+
+    @media (max-width: b.$mediaTablet) {
+        width: auto;
+    }
+}
