@@ -1,25 +1,6 @@
 @use "../bootstrap" as b;
 @use "../components/card";
 
-.review {
-}
-.container {
-}
-.review__container {
-}
-.title {
-}
-.review__title {
-}
-.slider {
-}
-.review__slider {
-}
-.slider__cards {
-}
-.card {
-}
-
 .slider__card {
     @include b.flex(flex-start, flex-start, row);
     width: 100%;
@@ -155,30 +136,4 @@
             width: calc(1rem * (22px / b.$basicFontSize));
         }
     }
-}
-
-.card__tag-title {
-}
-.button--rect {
-}
-.card__number {
-    @include b.flex(flex-start, center);
-    gap: clamp(0.5rem, 2.5vw, calc(1rem * (42px / b.$basicFontSize)));
-    white-space: nowrap;
-
-    @media (max-width: b.$mediaMobile) {
-        gap: 1rem;
-    }
-}
-
-.card__number-info {
-    font-size: calc(1rem * (20px / b.$basicFontSize));
-}
-
-.card__number-prev {
-}
-.card__number-next {
-    font-size: calc(1rem * (15px / b.$basicFontSize));
-}
-.slider-mini__right-img {
 }

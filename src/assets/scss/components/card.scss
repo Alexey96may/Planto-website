@@ -151,3 +151,21 @@
         padding: 0 1.2rem;
     }
 }
+
+.card__number {
+    @include b.flex(flex-start, center);
+    gap: clamp(0.5rem, 2.5vw, calc(1rem * (42px / b.$basicFontSize)));
+    white-space: nowrap;
+
+    @media (max-width: b.$mediaMobile) {
+        gap: 1rem;
+    }
+}
+
+.card__number-info {
+    font-size: calc(1rem * (20px / b.$basicFontSize));
+}
+
+.card__number-next {
+    font-size: calc(1rem * (15px / b.$basicFontSize));
+}
