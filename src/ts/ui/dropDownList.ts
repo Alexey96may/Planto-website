@@ -27,14 +27,14 @@ export class DropDownList {
         elemClone.style.maxHeight = "unset";
         elemClone.style.height = "auto";
         elemClone.style.position = "absolute";
-        elemClone.style.top = "0px";
+        elemClone.style.top = "-999px";
         elemClone.style.left = "0";
 
         document.querySelector("body")?.prepend(elemClone);
 
         const height = elemClone.clientHeight;
 
-        // elemClone.remove();
+        elemClone.remove();
         return height;
     }
 }

@@ -2,7 +2,7 @@
 
 **A website** for plant selling. **The design** is from Internet.
 
-<!-- [Presentation](https://alexey96may.github.io/Planto-website/dist/) -->
+[Presentation](https://alexey96may.github.io/Planto-website/dist/)
 
 ## Original Design Layout
 
