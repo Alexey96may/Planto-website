@@ -1,7 +1,7 @@
 @use "../bootstrap" as b;
 
 .nav {
-    overflow: auto;
+    overflow-x: visible;
     display: block;
 
     @media (max-width: b.$mediaTablet) {
@@ -14,27 +14,85 @@
     gap: clamp(b.$mainGap, 3vw, 43px);
 }
 
+.nav__item {
+    &:hover,
+    &:focus-visible {
+        .nav__link {
+            opacity: 1;
+
+            @media (hover: none) {
+                opacity: 0.75;
+            }
+        }
+    }
+}
+
 .nav__link {
-    font-size: 24px;
+    font-size: calc(1rem * (24px / b.$basicFontSize));
     color: b.$lightTextColor;
     font-weight: 500;
     opacity: 0.75;
     white-space: nowrap;
     padding: 0 b.$linkPadding;
     transition: all b.$basicTransTime ease;
-
-    &:hover,
-    &:focus-visible {
-        opacity: 1;
-
-        @media (hover: none) {
-            opacity: 0.75;
-        }
-    }
 }
 
 .nav__item-more {
     width: 12px;
     height: 7px;
     vertical-align: middle;
+    transition: all b.$basicTransTime ease;
+}
+
+.nav__item--plus {
+    position: relative;
+
+    &:hover,
+    &:focus-visible {
+        .nav__item--plus-list {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .nav__item-more {
+            transform: rotateZ(180deg) translateY(50%);
+
+            @media (hover: none) {
+                transform: none;
+            }
+        }
+    }
+}
+
+.nav__item--plus-list {
+    @include b.position(absolute, -1, top, left, auto, 0);
+    width: 100%;
+    visibility: hidden;
+    opacity: 0;
+    padding: calc(b.$linkPadding / 2) 0;
+    transition: all b.$basicTransTime ease;
+}
+
+.nav__item--plus-item {
+    &:hover,
+    &:focus-visible {
+        a {
+            opacity: 1;
+
+            @media (hover: none) {
+                opacity: 0.75;
+            }
+        }
+    }
+
+    a {
+        display: block;
+        transition: all b.$basicTransTime ease;
+        padding: b.$linkPadding;
+        width: 100%;
+        height: 100%;
+        font-weight: 400;
+        opacity: 0.75;
+        font-size: calc(1rem * (18px / b.$basicFontSize));
+    }
 }
