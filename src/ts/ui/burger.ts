@@ -1,10 +1,8 @@
 export class Burger {
     #burgerButton = document.getElementById("burger");
-    // #header = document.getElementById("header");
-    #headerNav = document.getElementById("headerNav");
+    #headerNav = document.getElementById("nav");
+    #navItems = document.querySelectorAll(".nav__item");
     #body = document.querySelector("body");
-    // #bgWrapper = document.getElementById("bg-wrapper");
-    // #bodyWrapper = document.querySelector(".wrapper");
     #isMenuOpen = false;
 
     constructor() {
@@ -21,24 +19,32 @@ export class Burger {
                 this.#isMenuOpen &&
                 (event.target as HTMLElement).tagName?.toLowerCase() === "a"
             ) {
-                //this.changeOverflow(this.BODY, "auto");
                 this.toggleMenu();
                 this.classesToggle();
             }
         });
-
-        // this.#bodyWrapper?.addEventListener("click", (event) => {
-        //     event.stopPropagation();
-        //     this.toggleMenu();
-        //     this.classesToggle();
-        // });
     }
 
     classesToggle(): void {
         this.#burgerButton?.classList.toggle("burger--cancel");
-        this.#headerNav?.classList.toggle("navigation--appear");
         this.#body?.classList.toggle("body__fixed");
-        // this.#bodyWrapper?.classList.toggle("wrapper--active");
+
+        if (this.#isMenuOpen) {
+            setTimeout(() => {
+                this.#headerNav?.classList.toggle("nav--appear");
+            }, (this.#navItems.length + 1) * 250);
+        } else {
+            this.#headerNav?.classList.toggle("nav--appear");
+        }
+
+        for (let i = 0; i < this.#navItems.length; i++) {
+            const navItem = this.#navItems[i];
+            const count = this.#isMenuOpen ? this.#navItems.length - i : i;
+
+            setTimeout(() => {
+                navItem.classList.toggle("nav-item--appear");
+            }, count * 250);
+        }
     }
 
     toggleMenu(): void {
