@@ -75,6 +75,10 @@
     height: 7px;
     vertical-align: middle;
     transition: all b.$basicTransTime ease;
+
+    @media (max-width: b.$mediaTablet) {
+        margin-left: 4px;
+    }
 }
 
 .nav__item--plus {
@@ -92,7 +96,6 @@
 
             @media (max-width: b.$mediaTablet) {
                 transform: none;
-                margin-left: 4px;
             }
         }
 
