@@ -4,20 +4,24 @@ export class Burger {
     #navItems = document.querySelectorAll(".nav__item");
     #body = document.querySelector("body");
     #isMenuOpen = false;
+    #isAnimStop = true;
 
     constructor() {
         this.#burgerButton?.addEventListener("click", (event) => {
-            event.stopPropagation();
-            this.classesToggle();
-            this.toggleMenu();
+            if (this.#isAnimStop) {
+                event.stopPropagation();
+                this.classesToggle();
+                this.toggleMenu();
+            }
         });
 
         this.#body?.addEventListener("click", (event) => {
             event.stopPropagation();
+            const eventEl = event.target as HTMLElement;
+
             if (
-                (event.target as HTMLElement).closest("header") &&
                 this.#isMenuOpen &&
-                (event.target as HTMLElement).tagName?.toLowerCase() === "a"
+                eventEl.parentElement?.tagName?.toLowerCase() === "a"
             ) {
                 this.toggleMenu();
                 this.classesToggle();
@@ -28,13 +32,16 @@ export class Burger {
     classesToggle(): void {
         this.#burgerButton?.classList.toggle("burger--cancel");
         this.#body?.classList.toggle("body__fixed");
+        this.#isAnimStop = false;
 
         if (this.#isMenuOpen) {
             setTimeout(() => {
                 this.#headerNav?.classList.toggle("nav--appear");
+                this.#isAnimStop = true;
             }, (this.#navItems.length + 1) * 250);
         } else {
             this.#headerNav?.classList.toggle("nav--appear");
+            this.#isAnimStop = true;
         }
 
         for (let i = 0; i < this.#navItems.length; i++) {

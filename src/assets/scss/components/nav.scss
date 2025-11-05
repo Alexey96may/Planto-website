@@ -6,14 +6,18 @@
     transition: all b.$basicTransTime ease;
 
     @media (max-width: b.$mediaTablet) {
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 6.25rem b.$containerPadding;
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 7rem b.$containerPadding b.$containerPadding;
         @include b.position(absolute, -1, top, left, 0, 0);
         visibility: hidden;
         opacity: 0;
         z-index: 5;
         width: 100%;
         height: 100%;
+    }
+
+    @media (max-width: b.$mediaMobile) {
+        padding: 5.4rem b.$containerPadding;
     }
 }
 
@@ -85,6 +89,21 @@
 
         .nav__item-more {
             transform: rotateZ(180deg) translateY(50%);
+
+            @media (max-width: b.$mediaTablet) {
+                transform: none;
+                margin-left: 4px;
+            }
+        }
+
+        .nav__plus-active {
+            @media (max-width: b.$mediaTablet) {
+                transform: rotateZ(180deg) translateY(50%);
+            }
+        }
+
+        .nav__link {
+            cursor: pointer;
         }
     }
 
@@ -92,6 +111,10 @@
         height: 27px;
         overflow: hidden;
     }
+}
+
+.nav__plus-active {
+    transform: rotateZ(180deg) translateY(50%);
 }
 
 .nav__item--plus-list {
@@ -103,7 +126,7 @@
     transition: all b.$basicTransTime ease;
 
     @media (max-width: b.$mediaTablet) {
-        padding: calc(b.$linkPadding / 2) 0;
+        padding: calc(b.$linkPadding / 2) 0 0;
         position: static;
         visibility: visible;
         opacity: 1;

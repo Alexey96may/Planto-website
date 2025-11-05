@@ -19,6 +19,7 @@
 .header__socials {
     @include b.flex(space-between, center);
     gap: clamp(b.$mainGap, 3vw, 59px);
+    z-index: 9;
 
     a {
         display: block;

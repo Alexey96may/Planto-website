@@ -2,14 +2,15 @@ export class DropDownList {
     element: HTMLElement;
     elemHeight: number;
     isListOpen = false;
+    moreArrow = document.getElementById("moreArrow") || null;
 
     constructor(elem: HTMLElement) {
         this.element = elem;
         this.elemHeight = this.realElemHeight(this.element);
-        console.log(this.elemHeight);
 
         this.element.addEventListener("click", () => {
             this.element.classList.toggle("nav__list--active");
+            this.moreArrow?.classList.toggle("nav__plus-active");
 
             if (this.isListOpen) {
                 this.isListOpen = false;
