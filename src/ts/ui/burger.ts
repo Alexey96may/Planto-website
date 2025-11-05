@@ -21,10 +21,11 @@ export class Burger {
 
             if (
                 this.#isMenuOpen &&
-                eventEl.parentElement?.tagName?.toLowerCase() === "a"
+                (eventEl.parentElement?.tagName?.toLowerCase() === "a" ||
+                    eventEl.tagName?.toLowerCase() === "a")
             ) {
-                this.toggleMenu();
                 this.classesToggle();
+                this.toggleMenu();
             }
         });
     }
@@ -32,6 +33,7 @@ export class Burger {
     classesToggle(): void {
         this.#burgerButton?.classList.toggle("burger--cancel");
         this.#body?.classList.toggle("body__fixed");
+
         this.#isAnimStop = false;
 
         if (this.#isMenuOpen) {
